@@ -1,9 +1,10 @@
 #include<stdio.h>
 
+
 /**
- * The main.c is the entrey point.
+ * main - Entry point
  *
- * the program returns 0 means exited with success.
+ * Return: Always 0 (Success)
  */
 
 int main(void)

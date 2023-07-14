@@ -3,9 +3,8 @@
 #include <stdio.h>
 
 /**
- * main: is the entery point of this program that prints random number each time get executed followed by its sign
- *
- * return: Always 0 (Success)
+ * main - is the entery point of this program that prints random numbr.
+ * Return: Always 0 (Success)
  */
 int main(void)
 {

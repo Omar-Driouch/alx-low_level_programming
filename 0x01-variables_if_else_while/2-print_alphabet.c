@@ -12,7 +12,7 @@ int main(void)
 	do {
 		putchar (n);
 		n++;
-	} while(n < 123);
+	} while (n < 123);
 	putchar ('\n');
 	return (0);
 }

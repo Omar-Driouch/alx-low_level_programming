@@ -9,8 +9,8 @@ int main(void)
 {
 	int n = 97;
 
-	do{
-		putchar(n);
+	do {
+		putchar (n);
 		n++;
 	} while(n < 123);
 	putchar ('\n');

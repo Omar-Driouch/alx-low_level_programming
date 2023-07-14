@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 /**
+ * main - main block
  * main: Two-Digit Number Sequence Printer
  * This program prints a sequence of two-digit numbers
  * in ascending order, separated by commas. The sequence
  * starts from 01 and goes up to 89, excluding numbers
  * with repeating digits.
- * Return 0 if exited proberly.
+ * Return: 0 if exited proberly.
  */
 
 int main(void)

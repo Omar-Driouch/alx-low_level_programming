@@ -10,10 +10,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if(n<0)
-		putchar("%d  is negative",n);
+		puts("%d  is negative",n);
 	if(n>0)
-		putchar("%d  is positive",n);
+		puts("%d  is positive",n);
 	if(n==0)
-		putchar("%d is zero",n);
+		puts("%d is zero",n);
 	return (0);
 }

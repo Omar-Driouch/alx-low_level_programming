@@ -2,9 +2,11 @@
 #include <time.h>
 #include <stdio.h>
 
-/*return: 0 if the program exited proberly */
-
-/*main: the entry point of this code that prints random number followed by its positive or negative sign  */
+/**
+ * main: is the entery point of this program that prints random number each time get executed followed by its sign
+ *
+ * return: Always 0 (Success)
+ */
 int main(void)
 {
 	int n;
@@ -12,10 +14,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if(n<0)
-		printf("%d  is negative",n);
+		printf("%d  is negative\n",n);
 	if(n>0)
-		printf("%d  is positive",n);
+		printf("%d  is positive\n",n);
 	if(n==0)
-		printf("%d is zero",n);
+		printf("%d is zero\n",n);
 	return (0);
 }

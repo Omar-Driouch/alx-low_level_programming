@@ -9,10 +9,10 @@ int main(void)
 	int n;
 
 	for (n = 0; n < 16; n++)
-		if (n >= 10) 
+		if (n >= 10)
 		{
 			putchar(n - 10 + 'a');
-		} else 
+		} else
 		{
 			putchar(n + '0');
 		}

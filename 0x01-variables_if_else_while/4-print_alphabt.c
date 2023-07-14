@@ -10,7 +10,6 @@ int main(void)
 	int n = 97;
 
 	do {
-	
 		if (n == 113 || n == 101)
 		{
 			n++;

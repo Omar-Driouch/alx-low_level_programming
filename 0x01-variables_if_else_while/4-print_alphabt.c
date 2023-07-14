@@ -15,7 +15,8 @@ int main(void)
 		{
 			n++;
 		}
-		else {
+		else
+		{
 			putchar (n);
 			n++;
 		}

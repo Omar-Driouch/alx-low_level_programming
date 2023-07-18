@@ -18,7 +18,7 @@ void times_table(void)
 		for (j = 0; j <= 9; j++)
 		{
 			n = i * j;
-			h = i / 10;
+			h = n / 10;
 			k = n % 10;
 
 			if (j == 0)

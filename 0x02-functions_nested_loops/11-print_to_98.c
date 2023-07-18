@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "main.h"
+
 /**
- * printTo98 - prints numbers up to 98
+ * print_to_98 - prints numbers up to 98
  * @n: starting integer
  *
  * Description: This function prints all natural numbers from the given
@@ -9,6 +10,7 @@
  *
  * Return: void
  */
+
 void print_to_98(int n)
 {
 	int i;
@@ -17,16 +19,15 @@ void print_to_98(int n)
 	{
 		for (i = n; i < 98; i++)
 		{
-			printf("%d, ",i);
+			printf("%d, ", i);
 		}
 	}
 	else if (n > 98 )
 	{
 		for (i = n; i > 98; i--)
 		{
-			printf("%d, ",i);
+			printf("%d, ", i);
 		}
 	}
-	printf("98\n");
-	
+	printf("98\n");	
 }

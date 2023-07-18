@@ -8,7 +8,7 @@
  * Return: void (no return value)
  */
 
-void times_table(void)
+void jack_bauer(void)
 {
 	int hours = 0;
 

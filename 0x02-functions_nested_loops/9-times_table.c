@@ -20,7 +20,7 @@ void times_table(void)
 			{
 				_putchar('0');
 				_putchar(',');
-				_pucthar(' ');
+				_putchar(' ');
 			}
 			else if (j * n < 10)
 			{

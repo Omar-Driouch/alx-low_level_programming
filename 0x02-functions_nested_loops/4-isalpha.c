@@ -7,7 +7,7 @@
  * Return: 1 if c is alphabetic 
  */
 
-int test_isalpha(int c)
+int _isalpha(int c)
 {
        	if (c >= 'a' && c <= 'z')
 	       	return (1);

@@ -3,7 +3,8 @@
 /**
  * jack_bauer - Prints every minute of the day.
  *
- * Description: This function prints every minute of a fictional day, from 00:00 to 23:59.
+ * Description: This function prints every minute of a fictional day,
+ * from 00:00 to 23:59.
  *
  * Return: void (no return value)
  */

@@ -31,7 +31,6 @@ void print_times_table(int n)
 			{
 				_putchar('0' + i*j);
 				_putchar(' ');
-				_putchar(' ');
 			}
 			if (j != n)
 			{

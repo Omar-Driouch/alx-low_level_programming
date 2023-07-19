@@ -15,7 +15,7 @@ int main(void)
 		if (i != 50)
 			printf("%ld, ", j);
 		else
-			printf("%ld", j);
+			printf("%ld\n", j);
 		n = k + j;
 		j = k;
 		k = n;

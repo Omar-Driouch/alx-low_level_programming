@@ -10,9 +10,9 @@ int main(void)
 {
 	unsigned long int i, j = 1, k = 2, n;
 
-	for (i = 1; i < 99; i++)
+	for (i = 1; i < 86; i++)
 	{
-		if (i != 98)
+		if (i != 85)
 			printf("%ld, ", j);
 		else
 			printf("%ld\n", j);

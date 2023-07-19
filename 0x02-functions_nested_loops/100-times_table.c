@@ -27,6 +27,15 @@ void print_times_table(int n)
 				_putchar('0' + (j*i / 10));
 				_putchar('0' + (j*i % 10));
 			}
+			else if
+			{
+				int n;
+
+				_putchar('0' + (j*i / 100));
+				n= j*i %  100;
+				_putchar('0' + (n / 10));
+				_putchar('0' + (n% 10));
+			}
 			else
 			{
 				_putchar('0' + i*j);

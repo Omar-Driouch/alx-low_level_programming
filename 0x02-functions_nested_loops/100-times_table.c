@@ -29,8 +29,8 @@ void print_times_table(int n)
 			}
 			else
 			{
-				_putchar('0' + i*j);
 				_putchar(' ');
+				_putchar('0' + i*j);
 			}
 			if (j != n)
 			{

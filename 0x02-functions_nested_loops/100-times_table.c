@@ -22,7 +22,7 @@ void print_times_table(int n)
 
 		for (j = 0; j <= n; j++)
 		{
-			if (i * j / 10)
+			if (i * j >= 10)
 			{
 				_putchar('0' + (j*i / 10));
 				_putchar('0' + (j*i % 10));
@@ -37,6 +37,7 @@ void print_times_table(int n)
 				_putchar(',');
 				_putchar(' ');
 			}
+			_putchar(' ');
 		}
 		i++;
 		_putchar('\n');

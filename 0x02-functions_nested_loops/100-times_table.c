@@ -22,12 +22,12 @@ void print_times_table(int n)
 
 		for (j = 0; j <= n; j++)
 		{
-			if (i * j >= 10)
+			if (i * j >= 10 && i * j < 100)
 			{
 				_putchar('0' + (j*i / 10));
 				_putchar('0' + (j*i % 10));
 			}
-			else if
+			else if (i * j >= 100)
 			{
 				int n;
 

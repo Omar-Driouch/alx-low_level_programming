@@ -29,15 +29,21 @@ void print_times_table(int n)
 			}
 			else
 			{
-				_putchar(' ');
 				_putchar('0' + i*j);
 			}
-			if (j != n)
+			if (j != n && i*j < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			_putchar(' ');
+			else
+			{
+				if (j <  n)
+				{
+					_putchar(',');
+					_putchar(' ');
+				}
+			}
 		}
 		i++;
 		_putchar('\n');

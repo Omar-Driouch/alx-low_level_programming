@@ -8,11 +8,11 @@
 
 int main(void)
 {
-	long int i, j = 1, k=2, n;
+	long int i, j = 1, k = 2, n;
 
-	for (i = 1; i < 15; i++)
+	for (i = 1; i < 51; i++)
 	{
-		if (i != 49)
+		if (i != 50)
 			printf("%ld, ", j);
 		else
 			printf("%ld", j);

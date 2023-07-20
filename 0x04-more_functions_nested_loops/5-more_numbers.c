@@ -31,6 +31,7 @@ void more_numbers(void)
 			j++;
 		}
 		i++;
+		_putchar(' ');
 		_putchar('\n');
 	}
 }

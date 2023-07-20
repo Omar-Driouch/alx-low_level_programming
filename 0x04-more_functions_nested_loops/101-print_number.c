@@ -33,6 +33,7 @@ void print_number(int n)
 	{
 		_putchar('0' + (n / 1000));
 		n = n %  1000;
+		_putchar('0' + (n / 100));
 		_putchar('0' + (n / 10));
 		_putchar('0' + (n % 10));
 	}

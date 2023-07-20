@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - Prints numbers from 1 to 100 with specific conditions.
- *
+ * main - Entry piont
+ * Return: Always 0
  * This function prints the numbers from 1 to 100. For multiples of three,
  * it prints "Fizz" instead of the number. For multiples of five, it prints
  * "Buzz" instead of the number. For numbers which are multiples of both

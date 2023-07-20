@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * _isupper  - function to check if c is digit number
- * Returns :1 if c is a digit 0 otherwise
+ * _isupper - A function that checks for uppercase character.
+ * @c: An input character
+ * Return: 1 if c is uppercase or 0 otherwise
  */
 
 int _isupper(int c)

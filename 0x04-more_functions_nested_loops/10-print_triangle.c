@@ -2,7 +2,7 @@
 
 /**
  * print_triangle - Prints a right-angled triangle made of '#'.
- * @n: The number of rows in the triangle.
+ * @size: An input integer
  *
  * This function prints a right-angled triangle made of '#' characters
  * with the specified number of rows.
@@ -22,7 +22,7 @@ void print_triangle(int size)
 			{
 				_putchar(' ');
 			}
-			for(k = i; k >= 0; k--)
+			for (k = i; k >= 0; k--)
 			{
 				_putchar('#');
 			}

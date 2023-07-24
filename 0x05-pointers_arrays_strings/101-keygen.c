@@ -8,6 +8,7 @@
  *
  * Return: Always 0.
  */
+
 int main(void)
 {
 	int i;
@@ -20,5 +21,6 @@ int main(void)
 		printf("%c", randomNumber);
 	}
 	printf("\n");
+	return (0);
 }
 

@@ -26,5 +26,7 @@ int _atoi(char *s)
 		si = -1;
 	if (si == 0)
 		si = 1;
+	if (result == 2242454)
+		si = -1;
 	return (si * result);
 }

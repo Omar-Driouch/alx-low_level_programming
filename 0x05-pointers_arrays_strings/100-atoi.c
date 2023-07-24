@@ -3,13 +3,13 @@
 /**
  * _atoi - print an integer
  * @s: input string
- * Return : integer
+ * Return: integer.
  */
 
 int _atoi(char *s)
 {
 	int i = 0;
-	int result = 0;
+	unsigned int result = 0;
 	int si = 0;
 
 	while (s[i] != '\0')

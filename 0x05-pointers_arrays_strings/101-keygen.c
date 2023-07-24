@@ -11,19 +11,19 @@
 
 int main(void)
 {
-	int i;
+	int i, l, r;
 	int times = 35;
 	int sum = 0;
 
 	srand(time(0));
 	for (i = 0; i < times - 1; i++)
 	{
-		int randomNumber = rand() % 90 + 33;
-		sum += randomNumber;
-		printf("%c", randomNumber);
+		r = rand() % 90 + 33;
+		sum += r;
+		printf("%c", r);
 	}
-	int lastRandomNumber = 2772 - sum;
-	printf("%c", lastRandomNumber);
+	l = 2772 - sum;
+	printf("%c", l);
 	printf("\n");
 	return (0);
 }

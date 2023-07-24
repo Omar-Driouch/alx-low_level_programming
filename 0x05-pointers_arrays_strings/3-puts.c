@@ -12,6 +12,6 @@ void _puts(char *str)
 
 	for (i = 0; i <= _strlen(str); i++)
 	{
-		printf("%c", str[i]);
+		_putchar(str[i]);
 	}
 }

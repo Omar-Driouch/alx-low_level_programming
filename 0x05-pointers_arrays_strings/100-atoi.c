@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * print_number - print an integer
+ * _atoi - print an integer
  * @s: input string
- * Return : void
+ * Return : integer
  */
 
 int _atoi(char *s)
@@ -14,7 +14,7 @@ int _atoi(char *s)
 
 	while (s[i] != '\0')
 	{
-		if (s[i] == '-' && s[i + 1] >= '0' && s[i+1] <= '9')
+		if (s[i] == '-' && s[i + 1] >= '0' && s[i + 1] <= '9')
 			si = 1;
 		if (s[i] >= '0' && s[i] <= '9')
 			result = result * 10 + (s[i] - '0');
@@ -22,7 +22,7 @@ int _atoi(char *s)
 		if (result != 0  && s[i] > '9')
 			break;
 	}
-	if (s[i - 1] >= '0' && s[i-1] <= '9' && si != 0)
+	if (s[i - 1] >= '0' && s[i - 1] <= '9' && si != 0)
 		si = -1 ;
 	if (si == 0)
 		si = 1;

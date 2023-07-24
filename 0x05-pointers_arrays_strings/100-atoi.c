@@ -23,8 +23,8 @@ int _atoi(char *s)
 			break;
 	}
 	if (s[i - 1] >= '0' && s[i - 1] <= '9' && si != 0)
-		si = -1 ;
+		si = -1;
 	if (si == 0)
 		si = 1;
 	return (si * result);
-}	
+}

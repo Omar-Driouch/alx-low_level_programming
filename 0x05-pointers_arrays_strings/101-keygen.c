@@ -13,6 +13,7 @@ int main(void)
 {
 	int i;
 	int times = 35;
+	int sum = 0;
 
 	srand(time(0));
 	for (i = 0; i < times - 1; i++)

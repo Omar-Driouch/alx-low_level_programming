@@ -10,7 +10,7 @@ char *leet(char *c)
 {
 	const char s[] = {'A', 'a', 'e', 'E', 't', 'T', 'O', 'o', 'L', 'l'};
 	const char s1[] = {'4', '4', '3', '3', '7', '7', '0', '0', '1', '1'};
-	int i , j;
+	int i, j;
 
 	for (i = 0; c[i] != '\0'; i++)
 	{

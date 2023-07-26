@@ -12,11 +12,11 @@ char *leet(char *c)
 	const char s1[] = {'4', '4', '3', '3', '7', '7', '0', '0', '1', '1'};
 	int i , j;
 
-	for (i = 0; c[i] != '\n'; i++)
+	for (i = 0; c[i] != '\0'; i++)
 	{
-		for (j = 0 ; s[j] != '\n' ; j++)
+		for (j = 0 ; j < 10 ; j++)
 		{
-			if(c[i] == s[j])
+			if (c[i] == s[j])
 				c[i] = s1[j];
 		}
 	}

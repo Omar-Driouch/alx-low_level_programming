@@ -8,7 +8,7 @@
 
 char *cap_string(char *c)
 {
-	const char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	const char s[] = {32, 9, 10, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
 	int i, j;
 
 	if (c[0] >= 'a' && c[0] <= 'z')
@@ -18,9 +18,9 @@ char *cap_string(char *c)
 	{
 		if (c[i] >= 'a' && c[i] <= 'z')
 		{
-			for (j = 0; sep[j] != '\0'; j++)
+			for (j = 0; s[j] != '\0'; j++)
 			{
-				if (c[i - 1] == sep[j])
+				if (c[i - 1] == s[j])
 				{
 					c[i] = c[i] - 32;
 					break;

@@ -8,7 +8,7 @@
 
 char *cap_string(char *c)
 {
-	const char sep[] = {' ', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
+	const char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
 	int i , j;
 
 	for (i = 0; c[i] != '\0'; i++)
@@ -19,8 +19,8 @@ char *cap_string(char *c)
 			{
 				if (c[i-1] == sep[j])
 				{
-					if (c[i] - 32 != 9)
 						c[i] = c[i] - 32;
+						break;
 				}
 			}
 		}

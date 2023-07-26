@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
- * cap_string - Capitalizes the first letter of each word in a string.
- * @s: Input string.
- * Return: The pointer to the destination string.
+ * cap_string - capitalizes all words of a string
+ * @c: input string.
+ * Return: the pointer to dest.
  */
 
 char *cap_string(char *c)
 {
 	const char sep[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(', ')', '{', '}'};
-	int i , j;
+	int i, j;
 
 	if (c[0] >= 'a' && c[0] <= 'z')
 		c[0] = c[0] - 32;
@@ -18,12 +18,12 @@ char *cap_string(char *c)
 	{
 		if (c[i] >= 'a' && c[i] <= 'z')
 		{
-			for (j = 0 ; sep[j] != '\0' ; j++)
+			for (j = 0; sep[j] != '\0'; j++)
 			{
-				if (c[i-1] == sep[j])
+				if (c[i - 1] == sep[j])
 				{
-						c[i] = c[i] - 32;
-						break;
+					c[i] = c[i] - 32;
+					break;
 				}
 			}
 		}

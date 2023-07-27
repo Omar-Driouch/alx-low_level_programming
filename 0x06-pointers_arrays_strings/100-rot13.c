@@ -6,8 +6,8 @@
  * the 13th letter after it in the alphabet.
  * For example, 'a' is replaced by 'n', 'b' is replaced by 'o', and so on.
  *
- * @param str The input string to apply ROT13 to.
- * @return The ROT13-encoded string.
+ * @str The input string to apply ROT13 to.
+ * Return: The ROT13-encoded string.
  */
 char *rot13(char *str)
 {
@@ -19,7 +19,6 @@ char *rot13(char *str)
 
     if (c >= 'a' && c <= 'z')
     {
-
       if (c >= 'n')
         str[i] = c - 13;
       else
@@ -27,7 +26,6 @@ char *rot13(char *str)
     }
     else if (c >= 'A' && c <= 'Z')
     {
-
       if (c >= 'N')
         str[i] = c - 13;
       else

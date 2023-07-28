@@ -25,14 +25,14 @@ char *rot13(char *str)
 		{
 			if (c == alphabet[j])
 			{
-				s[i] = rot13[j];
+				str[i] = rot13[j];
 				found = 1;
 				break;
 			}
 		}
 
 		if (!found)
-			s[i] = c;
+			str[i] = c;
 	}
 
 	return (str);

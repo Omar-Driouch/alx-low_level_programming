@@ -12,16 +12,27 @@
 
 char *rot13(char *str)
 {
-	int i;
-	char c;
+	int i, j;
+	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
 
-	for (i = 0; (c = str[i]); i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		char c = str[i];
+		int found = 0;
+
+		for (j = 0; j < 52; j++)
 		{
-			char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
-			str[i] = (c - base + 13) % 26 + base;
+			if (c == alphabet[j])
+			{
+				s[i] = rot13[j];
+				found = 1;
+				break;
+			}
 		}
+
+		if (!found)
+			s[i] = c;
 	}
 
 	return (str);

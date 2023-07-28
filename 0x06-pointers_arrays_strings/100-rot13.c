@@ -9,29 +9,20 @@
  * @str The input string to apply ROT13 to.
  * Return: The ROT13-encoded string.
  */
+
 char *rot13(char *str)
 {
-  int i;
+	int i;
+	char c;
 
-  for (i = 0; str[i] != '\0'; i++)
-  {
-    char c = str[i];
+	for (i = 0; (c = str[i]); i++)
+	{
+		if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+		{
+			char base = (c >= 'a' && c <= 'z') ? 'a' : 'A';
+			str[i] = (c - base + 13) % 26 + base;
+		}
+	}
 
-    if (c >= 'a' && c <= 'z')
-    {
-      if (c >= 'n')
-        str[i] = c - 13;
-      else
-        str[i] = c + 13;
-    }
-    else if (c >= 'A' && c <= 'Z')
-    {
-      if (c >= 'N')
-        str[i] = c - 13;
-      else
-        str[i] = c + 13;
-    }
-  }
-
-  return str;
+	return (str);
 }

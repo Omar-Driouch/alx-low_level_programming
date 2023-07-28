@@ -7,33 +7,26 @@
  * For example, 'a' is replaced by 'n', 'b' is replaced by 'o', and so on.
  *
  * @str The input string to apply ROT13 to.
- * Return: The ROT13-encoded string.
+ * Return: pointer to char
  */
 
 char *rot13(char *str)
 {
 	int i, j;
-	char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char rot13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char alpha[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		char c = str[i];
-		int found = 0;
-
-		for (j = 0; j < 52; j++)
+		j = 0;
+		while ((alpha[j] != '\0') && (str[i] != alpha[j]))
 		{
-			if (c == alphabet[j])
-			{
-				str[i] = rot13[j];
-				found = 1;
-				break;
-			}
+			j++;
 		}
-
-		if (!found)
-			str[i] = c;
+		if (str[i] == alpha[j])
+		{
+			str[i] = rot[j];
+		}
 	}
-
 	return (str);
 }

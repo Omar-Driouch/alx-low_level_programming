@@ -11,7 +11,6 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int i = 0, j;
-	unsigned int counter = 0;
 
 	while (*s != '\0')
 	{
@@ -19,12 +18,12 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*s == accept[j])
 			{
-				counter = (s);
+				return (s);
 			}
 		}
 
 		s++;
 	}
 
-	return (counter);
+	return (0);
 }

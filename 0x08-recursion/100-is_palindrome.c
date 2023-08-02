@@ -2,7 +2,7 @@
 
 /**
  * is_palindrome - Checks if a string is palindrome.
- * @s: A string to be checked for palindrome.
+ * @s: a string to be checked for palindrome.
  * Return: Returns 1 if the string is palin, 0 otherwise.
  */
 int is_palindrome(char *s)
@@ -14,6 +14,7 @@ int is_palindrome(char *s)
  * is_palin - function helper
  * @n: integer params
  * @i: integer params
+ * @s: input string
  * Return: 1 if the string is palin, 0 otherwise.
  */
 

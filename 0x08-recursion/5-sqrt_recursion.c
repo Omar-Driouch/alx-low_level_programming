@@ -2,7 +2,7 @@
 
 /**
  * _sqrt_recursion - a function that returns the natural square root of a num
- * @n the input parameter
+ * @n: the input parameter
  * Return: The calculated square root of 'n', or -1 if not found
  */
 

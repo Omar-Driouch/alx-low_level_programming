@@ -10,8 +10,9 @@
 
 int main (int argc, char *argv[])
 {
+	(void)argc;
 	printf ("This program was called with \"%s\".\n",argv[0]);
-	prinft ("\n");
+	printf ("\n");
 
 	return (0);
 }

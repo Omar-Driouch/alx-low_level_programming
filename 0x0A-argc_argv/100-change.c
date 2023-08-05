@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
 	int values[] = {25, 10, 5, 2, 1};
 	int numValues = 5, current;
 	int res = 0, i, j;
-	if (argc != 1)
+
+	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
@@ -36,7 +37,10 @@ int main(int argc, char *argv[])
 				current -= values[j];
 			}
 		}
-	
+		printf("%d\n", res);
+		return (0);
+
 	}
-	return (res);
+	
+	return (0);
 }

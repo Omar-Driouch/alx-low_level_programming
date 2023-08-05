@@ -11,8 +11,7 @@
 int main(int argc, char *argv[])
 {
 	int values[] = {25, 10, 5, 2, 1};
-	int numValues = 5, current;
-	int res = 0, i, j;
+	int current, res = 0, i, j;
 
 	if (argc != 2)
 	{
@@ -25,11 +24,11 @@ int main(int argc, char *argv[])
 		printf("0\n");
 	}
 
-	for (i= 0; i < numValues; i++)
+	for (i = 0; i < 5; i++)
 	{
 		current = atoi(argv[1]);
 
-		for (j = i; j < numValues; j++)
+		for (j = i; j < 5; j++)
 		{
 			while (current >= values[j])
 			{
@@ -41,6 +40,6 @@ int main(int argc, char *argv[])
 		return (0);
 
 	}
-	
+
 	return (0);
 }

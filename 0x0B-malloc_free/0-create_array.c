@@ -6,7 +6,7 @@
  * @size: Size of the array.
  * @c: Character to be stored in the array.
  *
- * Returns: A pointer to an array of characters.
+ * Return: A pointer to an array of characters.
  */
 
 
@@ -15,7 +15,7 @@ char *create_array(unsigned int size, char c)
 	char *A = malloc(sizeof(char) * size);
 	unsigned int i;
 
-	if (A == NULL)
+	if (A == NULL || size == NULL)
 		return (NULL);
 	for (i = 0; i < size; i++)
 	{

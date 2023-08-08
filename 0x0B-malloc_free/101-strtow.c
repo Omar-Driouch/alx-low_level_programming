@@ -36,32 +36,42 @@ char **strtow(char *str)
 			len++;
 		else
 		{
-			A[index++] = (char *)malloc((len + 1) * sizeof(char));
+			 A[index] = (char *)malloc((len + 1) * sizeof(char));
 			if (A[index - 1] == NULL)
 			{
-				for (j = 0; j < index - 1; j++)
+				for (j = 0; j < index; j++)
 				{
 					free(A[j]);
 				}
 				free(A);
 				return (NULL);
 			}
-			len = 0;
-		}
 
-		for (j = 0; j < total_space; j++)
-		{
-			if (str[i] != ' ')
-				A[j][i] = str[i];
-			else
-				A[j][i] = '\0';
+			for (j = 0; j < len; j++, i++)
+			{
+				A[index][j] = str[i];
+			}
+			  A[index][j] = '\0';
+			len = 0;
+			index++;
+
+
 		}
 
 	}
 
+	A[index] = (char *)malloc((len + 1) * sizeof(char));
+	if (A[index] == NULL)
+	{
+		for (j = 0; j <= index; j++)
+			free(A[j]);
+		 free(A);
+		 return (NULL);
+	}
 
-
-
+	for (j = 0; j < len; j++, i++)
+		A[index][j] = str[i];
+	 A[index][j] = '\0';
 
 
 	return (A);

@@ -50,5 +50,5 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	return (A);
+	return (*A);
 }

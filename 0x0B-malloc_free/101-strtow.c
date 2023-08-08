@@ -9,7 +9,7 @@
  * Return: returns a pointer to an array of strings (words)
  */
 
-char **strtow(char *str);
+char **strtow(char *str)
 {
 	char **A;
 	int j, i, len = 0, total_space = 0;

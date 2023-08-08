@@ -26,7 +26,7 @@ char **strtow(char *str)
 			total_space++;
 	}
 
-	A = (char **)malloc(sizeof(char *) * (total_space + 1) + 1);
+	A = (char **)malloc(sizeof(char *) * (total_space + 2));
 	if (A == NULL)
 		return (NULL);
 

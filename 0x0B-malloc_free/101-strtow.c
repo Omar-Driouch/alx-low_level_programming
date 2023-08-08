@@ -15,11 +15,15 @@ char **strtow(char *str)
 	int index = 0;
 
 	if (str[0] == '\0' || str == NULL)
+	{
 		return (NULL);
+	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
+		{
 			total_space++;
+		}
 	}
 
 	A = (char **)malloc(sizeof(char *) * (total_space + 2));

@@ -26,11 +26,11 @@ char **strtow(char *str)
 			total_space++;
 	}
 
-	char **A = (char **)malloc(sizeof(char *) * (total_space + 1));
+	A = (char **)malloc(sizeof(char *) * (total_space + 1));
 	if (A == NULL)
 		return (NULL);
 
-	for (int i = 0; str[i] != '\0';)
+	for (i = 0; str[i] != '\0';)
 	{
 		 while (str[i] == ' ')
 			 i++;
@@ -42,7 +42,7 @@ char **strtow(char *str)
 		 A[index] = (char *)malloc((len + 1) * sizeof(char));
 		 if (A[index] == NULL)
 		 {
-			 for (int j = 0; j < index; j++)
+			 for (j = 0; j < index; j++)
 				 free(A[j]);
 			 free(A);
 			 return (NULL);

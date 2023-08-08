@@ -13,8 +13,7 @@
 char *argstostr(int ac, char **av)
 {
 	char **A;
-	unsigned int j;
-	int i;
+	int j, i, len;
 
 	if (ac == 0 || av == NULL)
 	{
@@ -41,7 +40,8 @@ char *argstostr(int ac, char **av)
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; j < strlen(av[i]) + 1; j++)
+		len = strlen(av[i]);
+		for (j = 0; j <= len; j++)
 		{
 			if (av[i][j] != ' ')
 				A[i][j] = av[i][j];

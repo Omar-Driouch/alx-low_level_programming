@@ -19,60 +19,43 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == ' ')
 			total_space++;
 	}
 
-	A = (char **)malloc(sizeof(char *) * total_space + 1);
+	char **A = (char **)malloc(sizeof(char *) * (total_space + 1));
 	if (A == NULL)
 		return (NULL);
 
-	for (i = 0; str[i] != '\0'; i++)
+	for (int i = 0; str[i] != '\0';)
 	{
+		 while (str[i] == ' ')
+			 i++;
 
-		if (str[i] != ' ')
-			len++;
-		else
-		{
-			 A[index] = (char *)malloc((len + 1) * sizeof(char));
-			if (A[index - 1] == NULL)
-			{
-				for (j = 0; j < index; j++)
-				{
-					free(A[j]);
-				}
-				free(A);
-				return (NULL);
-			}
+		 len = 0;
+		 while (str[i + len] != '\0' && str[i + len] != ' ')
+			 len++;
 
-			for (j = 0; j < len; j++, i++)
-			{
-				A[index][j] = str[i];
-			}
-			  A[index][j] = '\0';
-			len = 0;
-			index++;
+		 A[index] = (char *)malloc((len + 1) * sizeof(char));
+		 if (A[index] == NULL)
+		 {
+			 for (int j = 0; j < index; j++)
+				 free(A[j]);
+			 free(A);
+			 return (NULL);
+		 }
 
+		 strncpy(A[index], &str[i], len);
+		 A[index][len] = '\0';
 
-		}
-
+		 index++;
+		 i += len;
 	}
 
-	A[index] = (char *)malloc((len + 1) * sizeof(char));
-	if (A[index] == NULL)
-	{
-		for (j = 0; j <= index; j++)
-			free(A[j]);
-		 free(A);
-		 return (NULL);
-	}
-
-	for (j = 0; j < len; j++, i++)
-		A[index][j] = str[i];
-	 A[index][j] = '\0';
-
+	A[index] = NULL;
 
 	return (A);
 }

@@ -15,7 +15,7 @@ char **strtow(char *str)
 	int j, i, len = 0, total_space = 0;
 	int index = 0;
 
-	if (str == '\0' || str == NULL)
+	if (str[0] == '\0' || str == NULL)
 	{
 		return (NULL);
 	}

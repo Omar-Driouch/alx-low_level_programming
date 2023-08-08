@@ -49,7 +49,18 @@ char **strtow(char *str)
 			len = 0;
 		}
 
+		for (j = 0; j < total_space; j++)
+		{
+			if (str[i] != ' ')
+				A[j][i] = str[i];
+			else
+				A[j][i] = '\0';
+		}
+
 	}
+
+
+
 
 
 

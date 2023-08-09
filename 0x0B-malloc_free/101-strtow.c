@@ -29,6 +29,8 @@ char **strtow(char *str)
 		len = 0;
 		while (str[i + len] != '\0' && str[i + len] != ' ')
 			len++;
+		if (i == 1 && len == 1)
+			len++;
 		A[index] = (char *)malloc((len + 1) * sizeof(char));
 		if (A[index] == NULL)
 		{

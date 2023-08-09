@@ -43,7 +43,7 @@ char **strtow(char *str)
 		i += len;
 	}
 	i = 0;
-	if (str[i] == ' ')
+	if (str[i] != ' ')
 		i = 1;
 	A[index - 1] = NULL;
 	return (A);

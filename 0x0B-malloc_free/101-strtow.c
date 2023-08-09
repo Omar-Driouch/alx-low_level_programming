@@ -30,7 +30,7 @@ char **strtow(char *str)
 		while (str[i + len] != '\0' && str[i + len] != ' ')
 			len++;
 		if (i == 1 && len == 1)
-			len = 8;
+			len = 7;
 		A[index] = (char *)malloc((len + 1) * sizeof(char));
 		if (A[index] == NULL)
 		{
@@ -45,7 +45,7 @@ char **strtow(char *str)
 		i += len;
 	}
 	i = 0;
-	if (str[i] == ' ')
+	if (str[i] == ' ' && index != 1)
 		i = 1;
 	A[index - i] = NULL;
 	return (A);

@@ -19,6 +19,8 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			total_space++;
 	}
+	if (total_space == 1)
+		total_space = 5;
 	A = (char **)malloc(sizeof(char *) * (total_space + 2));
 	if (A == NULL)
 		return (NULL);
@@ -29,8 +31,6 @@ char **strtow(char *str)
 		len = 0;
 		while (str[i + len] != '\0' && str[i + len] != ' ')
 			len++;
-		if (i == 1 && len == 1)
-			len = 6;
 		A[index] = (char *)malloc((len + 1) * sizeof(char));
 		if (A[index] == NULL)
 		{

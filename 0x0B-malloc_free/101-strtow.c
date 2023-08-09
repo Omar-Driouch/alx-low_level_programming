@@ -40,11 +40,10 @@ char **strtow(char *str)
 		}
 		strncpy(A[index], &str[i], len);
 		A[index][len] = '\0';
-		if (len > 0 && A[index][len - 1] == '\n')
-			A[index][len - 1] = '\0';
 		index++;
 		i += len;
 	}
+	A[index][len - 1] = '\0';
 	A[index] = NULL;
 	return (A);
 }

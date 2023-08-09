@@ -19,7 +19,6 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			total_space++;
 	}
-
 	A = (char **)malloc(sizeof(char *) * (total_space + 2));
 	if (A == NULL)
 		return (NULL);
@@ -43,6 +42,9 @@ char **strtow(char *str)
 		index++;
 		i += len;
 	}
+	i = 0;
+	if (str[i] == ' ')
+		i = 1;
 	A[index - 1] = NULL;
 	return (A);
 }

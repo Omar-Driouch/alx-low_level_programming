@@ -19,8 +19,6 @@ char **strtow(char *str)
 		if (str[i] == ' ')
 			total_space++;
 	}
-	if (total_space == 1)
-		total_space = 5;
 	A = (char **)malloc(sizeof(char *) * (total_space + 2));
 	if (A == NULL)
 		return (NULL);

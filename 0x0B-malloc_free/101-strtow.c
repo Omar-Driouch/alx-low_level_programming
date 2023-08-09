@@ -43,7 +43,6 @@ char **strtow(char *str)
 		index++;
 		i += len;
 	}
-	A[index][len - 1] = '\0';
-	A[index] = NULL;
+	A[index - 1] = NULL;
 	return (A);
 }

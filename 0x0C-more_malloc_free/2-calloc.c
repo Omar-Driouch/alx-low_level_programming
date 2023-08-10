@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-/***
- * _calloc - a function that allocates memory for an array, using malloc
+/**
+ * _calloc - allocates memory for an array using malloc
  * @nmemb: input element
  * @size: size of each element
  * Return: pointer to a pointer to the allocated memory.

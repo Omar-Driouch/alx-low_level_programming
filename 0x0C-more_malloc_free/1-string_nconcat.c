@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 /**
@@ -18,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (n <= 0)
 	{
-		New_string = malloc(sizeof(s1));
+		New_string = malloc(strlen(s1) + 1);
 		if (New_string == NULL)
 			return (NULL);
 		while (s1[i] != '\0')

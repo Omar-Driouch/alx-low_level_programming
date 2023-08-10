@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-
 /**
  * string_nconcat - concatenates two strings up to n characters of s2.
  * @s1: first string
@@ -16,12 +14,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *New_string;
 	unsigned int i = 0, j;
-	
+
 	if (s1 == NULL)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-
 	if (n <= 0)
 	{
 		New_string = malloc(strlen(s1) + 1);
@@ -35,13 +32,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		New_string[i] = '\0';
 		return (New_string);
 	}
-
 	New_string = malloc(sizeof(s1) + n);
 	if (New_string == NULL)
 	{
 		return (NULL);
 	}
-
 	i = 0;
 	for (j = 0; j < strlen(s1) + n; j++)
 	{
@@ -54,6 +49,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 	}
 	New_string[j] = '\0';
-
 	return (New_string);
 }

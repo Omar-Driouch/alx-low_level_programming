@@ -9,7 +9,6 @@
  * @n: number of characters from s2 to concatenate
  * Return: char pointer to the concatenated string (or NULL on failure)
  */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *New_string;
@@ -32,6 +31,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		New_string[i] = '\0';
 		return (New_string);
 	}
+	if (n > strlen(s2))
+		n = strlen(s2);
 	New_string = malloc(sizeof(s1) + n + 1);
 	if (New_string == NULL)
 	{

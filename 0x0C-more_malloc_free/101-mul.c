@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -32,7 +31,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (atoi(argv[1]) < 0 || atoi(argv[2]) < 0 )
+	if (atoi(argv[1]) < 0 || atoi(argv[2]) < 0)
 	{
 		printf("Error\n");
 		exit(98);

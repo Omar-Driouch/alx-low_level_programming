@@ -6,8 +6,10 @@
 
 
 /**
- *
- *
+ * _mul - function that mutlip 2 integers
+ * @num1: first integer
+ * @num2: second integer
+ * Return: integer
  */
 
 int _mul(int num1, int num2)
@@ -17,9 +19,10 @@ int _mul(int num1, int num2)
 
 
 /**
- *
- *
- *
+ * main - to printf the multip of 2 integers
+ * @argc: the number of argummnets passed to the fucntion
+ * @argv: the pointer to the array that holds the arguments
+ * Return: 0 if success otherwise exit with code 98
  */
 
 int main(int argc, char *argv[])
@@ -29,7 +32,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (!isdigit(argv[1][1]) || !isdigit(argv[2][1]))
+	if (atoi(argv[1]) < 0 || atoi(argv[2]) < 0 )
 	{
 		printf("Error\n");
 		exit(98);

@@ -1,4 +1,35 @@
 #include "dog.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+
+
+/**
+ * _strdup - Duplicates a string.
+ * @str: Pointer to the original string.
+ *
+ * Return: A pointer to the duplicated string.
+ */
+
+char *_strdup(char *str)
+{
+	char *A;
+	unsigned int i;
+
+	if (str == NULL)
+		return (NULL);
+	A = (char *)malloc(sizeof(char) * strlen(str) + 1);
+
+	if (A == NULL)
+		return (NULL);
+	for (i = 0; str[i] != '\0'; i++)
+		A[i] = str[i];
+
+	A[i] = '\0';
+	return (A);
+}
+
 
 
 /**
@@ -16,20 +47,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	if (newDog == NULL)
 		return (NULL);
-
 	newDog->name = strdup(name);
 	if (newDog->name == NULL)
 	{
 		return (NULL);
 	}
-	newDog->owner = strdup(owner);
-	 if (newDog->owner == NULL)
-	 {
-		 free(newDog->name);
-		 free(newDog);
-		 return (NULL);
-	 }
-	 newDog->age = age;
-
-	 return (newDog);
+	newDog->owner = _strdup(owner);
+	if (newDog->owner == NULL)
+	{
+		free(newDog->name);
+		free(newDog);
+		return (NULL);
+	}
+	newDog->age = age;
+	return (newDog);
 }

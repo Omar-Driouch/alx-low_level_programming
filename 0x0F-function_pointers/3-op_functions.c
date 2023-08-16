@@ -7,7 +7,7 @@
  * @a: The first number
  * @b: The second number
  *
- * Returns: The sum of a and b
+ * Return: The sum of a and b
  */
 
 int op_add(int a, int b)
@@ -20,7 +20,7 @@ int op_add(int a, int b)
  * @a: The first number (minuend)
  * @b: The second number (subtrahend)
  *
- * Returns: The difference between a and b
+ * Return: The difference between a and b
  */
 
 int op_sub(int a, int b)
@@ -33,7 +33,7 @@ int op_sub(int a, int b)
  * @a: The first number
  * @b: The second number
  *
- * Returns: The product of a and b
+ * Return: The product of a and b
  */
 
 int op_mul(int a, int b)
@@ -46,7 +46,7 @@ int op_mul(int a, int b)
  * @a: The dividend
  * @b: The divisor
  *
- * Returns: The result of the division of a by b
+ * Return: The result of the division of a by b
  */
 
 int op_div(int a, int b)
@@ -61,10 +61,10 @@ int op_div(int a, int b)
 
 /**
  * op_mod - Calculates the remainder of dividing one number by another
- * @num1: The dividend
- * @num2: The divisor
+ * @a: The dividend
+ * @b: The divisor
  *
- * Returns: The remainder of num1 divided by num2
+ * Return: The remainder of a divided by b
  */
 
 int op_mod(int a, int b)

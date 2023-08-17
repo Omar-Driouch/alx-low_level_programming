@@ -8,10 +8,10 @@
 void print_all(const char *const format, ...)
 {
 	const char *ptr = format;
-	va_list ls;
-	char *str = "";
+	va_list args;
+	char *str; 
 
-	va_start(ls, format);
+	va_start(args, format);
 
 	if (ptr)
 	{
@@ -20,18 +20,17 @@ void print_all(const char *const format, ...)
 			switch (*ptr)
 			{
 			case 'i':
-				printf("%d", va_arg(ls, int));
+				printf("%d", va_arg(args, int));
 				break;
 			case 'f':
-				printf("%f", va_arg(ls, double));
+				printf("%f", va_arg(args, double));
 				break;
 			case 'c':
-				printf("%c", va_arg(ls, int));
+				printf("%c", va_arg(args, int));
 				break;
 			case 's':
-				str = va_arg(ls, char *);
-				if (str ==  NULL)
-					str = "(nil)";
+				str = va_arg(args, char *);
+
 				printf("%s", str);
 				break;
 			default:
@@ -46,5 +45,5 @@ void print_all(const char *const format, ...)
 		}
 	}
 	printf("\n");
-	va_end(ls);
+	va_end(args);
 }

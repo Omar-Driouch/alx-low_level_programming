@@ -9,9 +9,9 @@ void print_all(const char *const format, ...)
 {
 	const char *ptr = format;
 	va_list ls;
+	char *check_string;
 
 	va_start(ls, format);
-
 	if (ptr)
 	{
 		while (*ptr)
@@ -28,11 +28,15 @@ void print_all(const char *const format, ...)
 				printf("%c", va_arg(ls, int));
 				break;
 			case 's':
-				printf("%s", va_arg(ls, char *));
+				check_string = va_arg(ls, char *);
+				if (check_string == NULL)
+					printf("(nil)");
+				else
+					printf("%s", check_string);
 				break;
 			default:
 				ptr++;
-				break;
+				continue;
 			}
 
 			if (*(ptr + 1) != '\0')

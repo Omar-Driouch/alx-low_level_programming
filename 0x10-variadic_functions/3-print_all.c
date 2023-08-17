@@ -1,10 +1,8 @@
 #include "variadic_functions.h"
-
 /**
  * print_all - function that prints anything
  * @format: list of types of arguments passed to the function
  */
-
 void print_all(const char *const format, ...)
 {
 	const char *ptr = format;
@@ -30,7 +28,6 @@ void print_all(const char *const format, ...)
 				break;
 			case 's':
 				str = va_arg(args, char *);
-
 				if (str == NULL)
 					str = "(nil)";
 				printf("%s", str);
@@ -42,7 +39,6 @@ void print_all(const char *const format, ...)
 			}
 			if (*(ptr + 1) != '\0')
 				printf(", ");
-
 			ptr++;
 		}
 		i++;

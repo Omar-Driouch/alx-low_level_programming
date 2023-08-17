@@ -20,7 +20,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 
 		current_string = va_arg(args, char *);
-		
 
 		if (current_string != NULL)
 		{
@@ -30,7 +29,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("(nil)");
 		}
-		
 
 		if (separator && i < n - 1)
 			printf("%s", separator);

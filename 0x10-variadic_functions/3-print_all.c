@@ -10,9 +10,10 @@ void print_all(const char *const format, ...)
 	const char *ptr = format;
 	va_list args;
 	char *str;
+	int i = 0;
 
 	va_start(args, format);
-	while (strlen(format) != 0)
+	while (format != NULL && format[i] != '\0')
 	{
 		while (*ptr)
 		{
@@ -36,6 +37,7 @@ void print_all(const char *const format, ...)
 				break;
 			default:
 				ptr++;
+				i++;
 				continue;
 			}
 			if (*(ptr + 1) != '\0')
@@ -43,7 +45,7 @@ void print_all(const char *const format, ...)
 
 			ptr++;
 		}
-		break;
+		i++;
 	}
 	printf("\n");
 	va_end(args);

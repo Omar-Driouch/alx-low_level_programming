@@ -1,12 +1,11 @@
-#include <stdio.h>
-#include <stdarg.h>
 #include "variadic_functions.h"
 
 /**
- * print_numbers - a function that prints numbers, followed by a new line
- * @separator: is the string to be printed between numbers
- * @n: is the number of integers passed to the function
- * Return: void.
+ * print_numbers - prints numbers.
+ * @separator: string to be printed between numbers.
+ * @n: number of integers passed to the function.
+ *
+ * Return: no return.
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -27,6 +26,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		current_number = va_arg(args, int);
 		printf("%d", current_number);
 	}
+	printf("\n");
 	va_end(args);
-	putchar('\n');
 }

@@ -31,10 +31,8 @@ void print_all(const char *const format, ...)
 				printf("%s", va_arg(ls, char *));
 				break;
 			default:
-				ptr++;
 				continue;
-				
-			}
+						}
 
 			if (*(ptr + 1) != '\0')
 				printf(", ");

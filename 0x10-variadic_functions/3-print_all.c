@@ -9,6 +9,7 @@ void print_all(const char *const format, ...)
 {
 	const char *ptr = format;
 	va_list ls;
+	char *str;
 
 	va_start(ls, format);
 
@@ -28,7 +29,10 @@ void print_all(const char *const format, ...)
 				printf("%c", va_arg(ls, int));
 				break;
 			case 's':
-				printf("%s", va_arg(ls, char *));
+				str = va_arg(ls, char *);
+				if (!str)
+					str = "(nil)";
+				printf("%s", str);
 				break;
 			default:
 				ptr++;

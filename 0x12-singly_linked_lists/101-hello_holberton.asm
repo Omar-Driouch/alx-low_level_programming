@@ -1,5 +1,5 @@
 section .data
-    hello_msg db "Hello, Holberton", 0
+    msg db "Hello, Holberton", 0
     fmt db "%s", 10, 0
 
 section .text
@@ -9,7 +9,7 @@ section .text
 main:
     sub rsp, 8        
     mov rdi, fmt      
-    mov rsi, hello_msg  
+    mov rsi, msg  
     xor rax, rax      
     call printf      
     add rsp, 8        

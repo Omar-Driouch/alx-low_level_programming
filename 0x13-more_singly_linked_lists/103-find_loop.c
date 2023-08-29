@@ -20,7 +20,7 @@ listint_t *find_listint_loop(listint_t *head)
 			l = head;
 			while (l != h)
 			{
-				L = l->next;
+				l = l->next;
 				h = h->next;
 			}
 			return (l);

@@ -8,20 +8,21 @@
 
 void print_binary(unsigned long int dec)
 {
+	int num_bits = sizeof(unsigned long int) * 8;
 
-	int i = 31;
-	int shiftter, non_zero_found = 0;
+	int i;
+	int non_zero_found = 0;
 
-	while (i >= 0)
+	for (i = num_bits - 1; i >= 0; i--)
 	{
-		shiftter = (1 << i);
-		if (dec & shiftter)
+		if (dec & (1UL << i))
 		{
-			_putchar('1');
+			putchar('1');
 			non_zero_found = 1;
 		}
 		else if (non_zero_found || i == 0)
-			_putchar('0');
-		i--;
+		{
+			putchar('0');
+		}
 	}
 }

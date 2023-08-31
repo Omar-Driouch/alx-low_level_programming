@@ -17,11 +17,11 @@ void print_binary(unsigned long int dec)
 		shiftter = (1 << i);
 		if (dec & shiftter)
 		{
-			putchar('1');
+			_putchar('1');
 			non_zero_found = 1;
 		}
 		else if (non_zero_found || i == 0)
-			putchar('0');
+			_putchar('0');
 		i--;
 	}
 }

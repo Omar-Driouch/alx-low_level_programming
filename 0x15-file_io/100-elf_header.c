@@ -15,6 +15,7 @@ void print_elf_osabi(Elf64_Ehdr *ehdr);
 void print_elf_abi_version(Elf64_Ehdr *ehdr);
 void print_elf_type(Elf64_Ehdr *ehdr);
 void print_elf_entry(Elf64_Ehdr *ehdr);
+void error_exit(const char *message, int exit_code);
 
 /**
  * print_elf_ident - Print the ELF identification information.
@@ -30,6 +31,18 @@ void print_elf_ident(Elf64_Ehdr *ehdr)
 		printf("%02x ", ehdr->e_ident[i]);
 	}
 	printf("\n");
+}
+
+/**
+ * error_exit - Print an error message to stderr
+ * and exit with the given exit code.
+ * @message: the message error
+ * @exit_code: the exit code
+ */
+void error_exit(const char *message, int exit_code)
+{
+	fprintf(stderr, "Error: %s\n", message);
+	exit(exit_code);
 }
 
 /**
@@ -162,7 +175,6 @@ void print_elf_entry(Elf64_Ehdr *ehdr)
  *
  * Return: 0 on success.
  */
-
 int main(int argc, char *argv[])
 {
 	int fd;
@@ -171,27 +183,20 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s elf_filename\n", argv[0]);
-		exit(98);
+		error_exit("Usage: specify an ELF file as an argument", 1);
 	}
 
 	fd = open(argv[1], O_RDONLY);
-
 	if (fd == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Cannot open file %s\n", argv[1]);
-		exit(98);
+		error_exit("Cannot open the specified file", 2);
 	}
 
-	
 	read_bytes = read(fd, &ehdr, sizeof(Elf64_Ehdr));
 
-	if (read_bytes != sizeof(Elf64_Ehdr) ||
-		memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
+	if (read_bytes != sizeof(Elf64_Ehdr) || memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: %s is not an ELF file\n", argv[1]);
-		close(fd);
-		exit(98);
+		error_exit("The specified file is not an ELF file", 3);
 	}
 
 	printf("ELF Header:\n");
@@ -205,5 +210,5 @@ int main(int argc, char *argv[])
 	print_elf_entry(&ehdr);
 
 	close(fd);
-	return (0);
+	return 0;
 }

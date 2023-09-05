@@ -94,7 +94,7 @@ void print_elf_data(Elf64_Ehdr *ehdr)
  */
 void print_elf_version(Elf64_Ehdr *ehdr)
 {
-	printf("	Version:                           %d ",ehdr->e_ident[EI_VERSION]);
+	printf("	Version:                           %d ", ehdr->e_ident[EI_VERSION]);
 	printf("(current)\n");
 }
 
@@ -213,7 +213,6 @@ int main(int argc, char *argv[])
 	print_elf_type(&ehdr);
 	print_elf_entry(&ehdr);
 
-	free(ehdr);
 	close(fd);
 	return (0);
 }

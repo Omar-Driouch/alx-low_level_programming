@@ -94,8 +94,7 @@ void print_elf_data(Elf64_Ehdr *ehdr)
  */
 void print_elf_version(Elf64_Ehdr *ehdr)
 {
-	printf("	Version:                           %d ", ehdr->e_ident[EI_VERSION]);
-	printf("(current)\n");
+	printf("Version:                           %d(current)\n", ehdr->e_ident[EI_VERSION]);
 }
 
 /**
@@ -128,8 +127,7 @@ void print_elf_osabi(Elf64_Ehdr *ehdr)
  */
 void print_elf_abi_version(Elf64_Ehdr *ehdr)
 {
-	printf("  ABI Version:                           %d\n",
-	ehdr->e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:     %d\n", ehdr->e_ident[EI_ABIVERSION]);
 }
 
 /**
@@ -197,8 +195,7 @@ int main(int argc, char *argv[])
 
 	read_bytes = read(fd, &ehdr, sizeof(Elf64_Ehdr));
 
-	if (read_bytes != sizeof(Elf64_Ehdr) ||
-	memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
+	if (read_bytes != sizeof(Elf64_Ehdr) || memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
 	{
 		error_exit("The specified file is not an ELF file", 3);
 	}
@@ -214,5 +211,5 @@ int main(int argc, char *argv[])
 	print_elf_entry(&ehdr);
 
 	close(fd);
-	return (0);
+	return 0;
 }

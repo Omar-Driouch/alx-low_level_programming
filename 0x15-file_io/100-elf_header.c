@@ -213,6 +213,7 @@ int main(int argc, char *argv[])
 	print_elf_type(&ehdr);
 	print_elf_entry(&ehdr);
 
+	free(ehdr);
 	close(fd);
 	return (0);
 }

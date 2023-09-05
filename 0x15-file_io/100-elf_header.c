@@ -94,8 +94,8 @@ void print_elf_data(Elf64_Ehdr *ehdr)
  */
 void print_elf_version(Elf64_Ehdr *ehdr)
 {
-	printf("	Version:                           %d
-	 (current)\n", ehdr->e_ident[EI_VERSION]);
+	printf("	Version:                           %d ",ehdr->e_ident[EI_VERSION]);
+	printf("(current)\n");
 }
 
 /**
@@ -128,8 +128,8 @@ void print_elf_osabi(Elf64_Ehdr *ehdr)
  */
 void print_elf_abi_version(Elf64_Ehdr *ehdr)
 {
-	printf("  ABI Version:                           %d
-	\n", ehdr->e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                           %d\n",
+	ehdr->e_ident[EI_ABIVERSION]);
 }
 
 /**

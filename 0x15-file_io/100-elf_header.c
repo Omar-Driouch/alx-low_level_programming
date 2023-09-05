@@ -6,6 +6,7 @@
 #include <string.h>
 
 #define BUFFER_SIZE 1024
+#define SELFMAG 4
 
 void print_elf_ident(Elf64_Ehdr *ehdr);
 void print_elf_class(Elf64_Ehdr *ehdr);

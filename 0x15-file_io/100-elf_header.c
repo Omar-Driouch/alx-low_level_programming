@@ -4,6 +4,8 @@
 #include <fcntl.h>
 #include <elf.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 #define BUFFER_SIZE 1024
 #define SELFMAG 4
@@ -94,7 +96,8 @@ void print_elf_data(Elf64_Ehdr *ehdr)
  */
 void print_elf_version(Elf64_Ehdr *ehdr)
 {
-	printf("Version:                           %d(current)\n", ehdr->e_ident[EI_VERSION]);
+	printf("Version:                           %d
+	(current)\n", ehdr->e_ident[EI_VERSION]);
 }
 
 /**
@@ -178,7 +181,7 @@ void print_elf_entry(Elf64_Ehdr *ehdr)
  */
 int main(int argc, char *argv[])
 {
-	int fd;
+	int fd = -1;
 	Elf64_Ehdr ehdr;
 	ssize_t read_bytes;
 
@@ -195,7 +198,8 @@ int main(int argc, char *argv[])
 
 	read_bytes = read(fd, &ehdr, sizeof(Elf64_Ehdr));
 
-	if (read_bytes != sizeof(Elf64_Ehdr) || memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
+	if (read_bytes != sizeof(Elf64_Ehdr) ||
+	memcmp(ehdr.e_ident, ELFMAG, SELFMAG) != 0)
 	{
 		error_exit("The specified file is not an ELF file", 3);
 	}
@@ -211,5 +215,5 @@ int main(int argc, char *argv[])
 	print_elf_entry(&ehdr);
 
 	close(fd);
-	return 0;
+	return (0);
 }

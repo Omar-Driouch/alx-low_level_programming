@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-
 /**
  * main - generate a key depending on a username for crackme5
 
@@ -8,7 +7,6 @@
  */
 int main(void)
 {
-
 
 	return (0);
 }

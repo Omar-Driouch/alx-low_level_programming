@@ -32,27 +32,29 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned_key = (unsigned char *)key;
 	index = key_index(unsigned_key, ht->size);
 	duplicated_value = strdup(value);
-	entry = malloc(sizeof(hash_node_t));
 
-	/*Check for existing key */
-	if (Hash_table_lookup(ht, key) == 1)
+	/* Check for existing key*/
+	entry = ht->array[index];
+	while (entry != NULL)
 	{
+		if (strcmp(entry->key, key) == 0)
+		{
 
-		temp = realloc(entry->value, strlen(value) + 1);
+			temp = realloc(entry->value, strlen(value) + 1);
 
-		entry->value = temp;
-		strcpy(entry->value, duplicated_value);
-		return 1;
+			entry->value = temp;
+			strcpy(entry->value, duplicated_value);
+			return (1);
+		}
+		entry = entry->next;
 	}
 
 	/*creating new entry*/
 	entry = malloc(sizeof(hash_node_t));
 	entry->value = malloc(strlen(value) + 1);
-
 	entry->key = malloc(strlen(key) + 1);
 	strcpy(entry->value, duplicated_value);
 	strcpy(entry->key, key);
-
 	/*inserting to the hash table */
 	entry->next = ht->array[index];
 	ht->array[index] = entry;

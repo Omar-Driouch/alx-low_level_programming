@@ -3,7 +3,8 @@
 /**
  * hash_table_set - Inserts a key-value pair into the hash table.
  *
- * This function inserts a key-value pair into the hash table. Memory is allocated
+ * This function inserts a key-value pair into the hash table. Memory is
+ * allocated
  * to store the key and value within the hash table entry.
  *
  * @ht: A pointer to the hash table structure.
@@ -11,8 +12,9 @@
  * @value: The value associated with the key.
  *
  * Return:
- *     -  1 if the key-value pair is successfully inserted into the hash table.
- *     -  0 if either the key or the hash table pointer is NULL or if memory allocation fails.
+ *     -  1 if the key-value pair is successfully inserted into the hash table
+ *     -  0 if either the key or the hash table pointer is NULL or if memory
+ * allocation fails.
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -22,7 +24,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *entry;
 	(void)value;
 
-	if (key == NULL || ht == NULL)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
 		return (0);
 
 	unsigned_key = (unsigned char *)key;
@@ -65,7 +67,7 @@ int Hash_table_lookup(hash_table_t *ht, const char *key)
 	if (key == NULL || ht == NULL)
 	{
 		/*  Indicate an error due to NULL inputs */
-		return -1;
+		return (-1);
 	}
 
 	unsigned_key = (unsigned char *)key;
@@ -80,9 +82,9 @@ int Hash_table_lookup(hash_table_t *ht, const char *key)
 	if (tmp == NULL)
 	{
 		/* Key not found */
-		return 0;
+		return (0);
 	}
 
 	/*  Key found */
-	return 1;
+	return (1);
 }

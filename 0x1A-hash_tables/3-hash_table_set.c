@@ -22,6 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned char *unsigned_key;
 	long int index;
 	hash_node_t *entry;
+	char *duplicated_value;
 	(void)value;
 
 	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
@@ -29,13 +30,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	unsigned_key = (unsigned char *)key;
 	index = key_index(unsigned_key, ht->size);
+	duplicated_value =  strdup(value);
 
 	/*creating new entry*/
 	entry = malloc(sizeof(hash_node_t));
 	entry->value = malloc(strlen(value) + 1);
 
 	entry->key = malloc(strlen(key) + 1);
-	strcpy(entry->value, value);
+	strcpy(entry->value, duplicated_value);
 	strcpy(entry->key, key);
 
 	/*inserting to the hash table */

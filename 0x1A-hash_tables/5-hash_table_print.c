@@ -6,7 +6,7 @@
  *
  * Description: This function prints a hash table. If the hash table is NULL,
  * it does nothing. Otherwise, it prints the key/value.
- * 
+ *
  * Return: void.
  */
 void hash_table_print(const hash_table_t *ht)

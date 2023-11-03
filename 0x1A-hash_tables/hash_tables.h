@@ -45,4 +45,5 @@ int Hash_table_lookup(hash_table_t *ht, const char *key);
 void print_hash_table(hash_table_t *ht);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
+void hash_table_delete(hash_table_t *ht);
 #endif
